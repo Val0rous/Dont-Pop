@@ -28,7 +28,7 @@ public class Leaderboard {
 	public Leaderboard(final String savePath) {
 		this.saveFile = new File(savePath);
 		try {
-			if (saveFile.createNewFile()) {
+			if (this.saveFile.createNewFile()) {
 				this.save();
 			}
 		} catch (IOException e) {
