@@ -82,7 +82,6 @@ public class ScoreCalc {
 
     /**
      * Increments score by 1 every 4 frames, giving >= 15 points per second.
-     *
      */
 	public void calculateScore(final double deltaTime) {
 		//only calculates score if calcStatus is true
@@ -137,7 +136,7 @@ public class ScoreCalc {
      * Gets remaining multiplier time.
      * @return multiplierTime
      */
-    public double getMultiplierTime() {
+    private double getMultiplierTime() {
     	return this.multiplierTime;
     }
     
@@ -145,7 +144,7 @@ public class ScoreCalc {
      * Decreases multiplier time by an arbitrary amount.
      * @param decrement
      */
-    public void decMultiplierTime(final double decrement) {
+    private void decMultiplierTime(final double decrement) {
     	this.multiplierTime -= decrement;
     }
     
