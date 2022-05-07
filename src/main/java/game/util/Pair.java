@@ -66,8 +66,8 @@ public class Pair<E1, E2> implements Serializable {
 		}
 		@SuppressWarnings("rawtypes")
 		final Pair other = (Pair) obj;
-		return Objects.equals(e1, other.e1) 
-		        && Objects.equals(e2, other.e2);
+		return Objects.equals(this.e1, other.e1) 
+		        && Objects.equals(this.e2, other.e2);
 	}
 	
 	/**

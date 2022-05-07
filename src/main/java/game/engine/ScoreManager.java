@@ -7,14 +7,13 @@ import game.util.Pair;
 
 /**
  * ScoreManager calculates the current score.
- * Modifica i valori della tabella
+ * Edits table values.
  */
 public class ScoreManager {
 
 	private int score;
 	private String playerName;
 	private final Leaderboard leaderboard;
-	private final GameApplication application;
 	private boolean readOnly;
 	
     /**
@@ -24,11 +23,10 @@ public class ScoreManager {
      * @param leaderboard
      * @param application
      */
-    public ScoreManager(final String playerName, final int score, final Leaderboard leaderboard, final GameApplication application) {
+    public ScoreManager(final String playerName, final int score, final Leaderboard leaderboard) {
     	this.score = score;
     	this.playerName = playerName;
     	this.leaderboard = leaderboard;
-    	this.application = application;
 
     	this.leaderboard.load();
     	this.leaderboard.addToRanking(this.playerName, this.score);
@@ -37,14 +35,13 @@ public class ScoreManager {
     }
 
     /**
-     * This constructor is useful when all you want to do is view current leaderboard, without editing it.
+     * This constructor is useful when all you want to do is to view current leaderboard, without editing it.
      * @param leaderboard
      * @param application
      */
-    public ScoreManager(final Leaderboard leaderboard, final GameApplication application) {
+    public ScoreManager(final Leaderboard leaderboard) {
     	this.readOnly = true;
     	this.leaderboard = leaderboard;
-    	this.application = application;
 
     	this.leaderboard.load();
     }
@@ -79,14 +76,6 @@ public class ScoreManager {
      */
     public String getRank() {
     	return String.valueOf(this.leaderboard.getRank(this.getPlayerName(), this.getScore()));
-    }
-
-    /**
-     * Returns to menu.
-     * @throws Exception 
-     */
-    public void menu() throws Exception {
-    	this.application.menu();
     }
 
     /**

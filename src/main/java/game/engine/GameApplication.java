@@ -143,7 +143,7 @@ public class GameApplication extends Application {
 	 * @throws Exception 
 	 */
 	public void score(final int score) {
-		final ScoreManager scoremanager = new ScoreManager(this.playerName, score, this.leaderboard, this);   // prende score e il nome player e leaderboard dal game engine e aggiungere al costruttpre il nome del player
+		final ScoreManager scoremanager = new ScoreManager(this.playerName, score, this.leaderboard);   // prende score e il nome player e leaderboard dal game engine e aggiungere al costruttpre il nome del player
 		try {
 			final ScoreScene scoreScene = new ScoreScene(scoremanager, this, SCREEN_SIZE);
 			this.switchScene(scoreScene.getScene());
@@ -158,7 +158,7 @@ public class GameApplication extends Application {
 	 * @throws Exception 
 	 */
 	public void viewScoreNoEdit() throws Exception {
-		final ScoreManager scoreManager = new ScoreManager(this.leaderboard, this);
+		final ScoreManager scoreManager = new ScoreManager(this.leaderboard);
 		final ScoreScene scoreScene = new ScoreScene(scoreManager, this, SCREEN_SIZE);
 
 		this.switchScene(scoreScene.getScene());

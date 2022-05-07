@@ -105,7 +105,7 @@ public class ScoreSceneController {
 	 * @throws Exception 
 	 */
 	public void menu() throws Exception {
-		this.scoreManager.menu();
+		this.application.menu();
 	}
 	
 	/**
