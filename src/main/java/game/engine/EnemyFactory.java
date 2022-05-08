@@ -52,27 +52,13 @@ public class EnemyFactory {
 	 * @return the abstract game object of a enemy
 	 */
 	public AbstractGameObject getEnemyObj(final ObjectType type) {
-
-		final ObjectType objectTyper = type;
-
-		if (objectTyper == ObjectType.BULLET) {
-
-			return this.createBullet();
-
-		} else if (objectTyper == ObjectType.THORNBALL) {
-
-			return this.createThornball();
-
-		} else if (objectTyper == ObjectType.EXPLOSION) {
-
-			return this.createExplosion();
-
-		} else if (objectTyper == ObjectType.LASER) {
-
-			return this.createLaser();
-		}
-		// default enemy
-		return this.createBullet();
+	    return switch (type) {
+	    case BULLET -> this.createBullet();
+	    case THORNBALL -> this.createThornball();
+	    case EXPLOSION -> this.createExplosion();
+	    case LASER -> this.createLaser();
+	    default -> this.createBullet(); //default enemy
+	    };
 	}
 
 	/**
