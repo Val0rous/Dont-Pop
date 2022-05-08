@@ -63,7 +63,7 @@ public class LineRenderer implements Renderer {
 	 */
 	private Point2D getLimit(final Point2D origin, final double m, final double xLimit) {
 		final double y = m * (xLimit - origin.getX()) + origin.getY();
-		if (y > 1 || y < 0) {
+		if (y < 0 || y > 1) {
 			final double newY = y > 1 ? 1 : 0;
 			final double x = (newY - origin.getY() + m * origin.getX()) / m;
 			return Point2D.of(x, newY);

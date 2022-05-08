@@ -20,15 +20,15 @@ public class PowerUpObj extends AbstractGameObject {
 	 * @param type
 	 * @param gameEngine
 	 */
-	public PowerUpObj(final Point2D position, final ObjectType type, final GameEngine gameEngine) {
+    public PowerUpObj(final Point2D position, final ObjectType type, final GameEngine gameEngine) {
 		super(position, type, gameEngine);
-		if (type == AbstractGameObject.ObjectType.PWRUP_SHIELD) {
-			this.setRenderer((Renderer) new ImageRenderer(this, ImageRenderer.Sprite.PWRUP_SHIELD, SIZE, 0));
-		} else if (type == AbstractGameObject.ObjectType.PWRUP_MULTIPLIER) {
-			this.setRenderer((Renderer) new ImageRenderer(this, ImageRenderer.Sprite.PWRUP_MULTIPLIER, SIZE, 0));
-		} else if (type == AbstractGameObject.ObjectType.PWRUP_SWEEPER) {
-			this.setRenderer((Renderer) new ImageRenderer(this, ImageRenderer.Sprite.PWRUP_SWEEPER, SIZE, 0));
+		
+		switch (type) {
+		    case PWRUP_SHIELD -> this.setRenderer((Renderer) new ImageRenderer(this, ImageRenderer.Sprite.PWRUP_SHIELD, SIZE, 0));
+		    case PWRUP_MULTIPLIER -> this.setRenderer((Renderer) new ImageRenderer(this, ImageRenderer.Sprite.PWRUP_MULTIPLIER, SIZE, 0));
+		    default -> this.setRenderer((Renderer) new ImageRenderer(this, ImageRenderer.Sprite.PWRUP_SWEEPER, SIZE, 0));
 		}
+		
 		this.setCollider((Collider)new CircleCollider(this, SIZE / 2, Point2D.of(0, 0)));
 	}
 
@@ -43,5 +43,4 @@ public class PowerUpObj extends AbstractGameObject {
 			this.destroy();
 		}
 	}
-
 }

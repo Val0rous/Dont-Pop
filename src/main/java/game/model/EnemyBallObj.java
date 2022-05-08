@@ -41,7 +41,10 @@ public class EnemyBallObj extends AbstractGameObject {
 		((ImageRenderer) this.getRenderer()).setRotation(this.rotation);
 		this.getPosition().add(this.velocity);
 		this.velocity.setY(this.velocity.getY() + this.gravity);
-		if (this.getPosition().getX() >= 1.5 || this.getPosition().getY() >= 1.5 || this.getPosition().getX() <= -0.5 || this.getPosition().getY() <= -0.5) {
+		if (this.getPosition().getX() >= 1.5 
+		        || this.getPosition().getY() >= 1.5 
+		        || this.getPosition().getX() <= -0.5 
+		        || this.getPosition().getY() <= -0.5) {
 			this.destroy();
 		}
 

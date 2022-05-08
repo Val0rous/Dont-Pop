@@ -53,11 +53,11 @@ public class EnemyFactory {
 	 */
 	public AbstractGameObject getEnemyObj(final ObjectType type) {
 	    return switch (type) {
-	    case BULLET -> this.createBullet();
-	    case THORNBALL -> this.createThornball();
-	    case EXPLOSION -> this.createExplosion();
-	    case LASER -> this.createLaser();
-	    default -> this.createBullet(); //default enemy
+    	    case BULLET -> this.createBullet();
+    	    case THORNBALL -> this.createThornball();
+    	    case EXPLOSION -> this.createExplosion();
+    	    case LASER -> this.createLaser();
+    	    default -> this.createBullet(); //default enemy
 	    };
 	}
 

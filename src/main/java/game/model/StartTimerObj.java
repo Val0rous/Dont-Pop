@@ -44,5 +44,4 @@ public class StartTimerObj extends AbstractGameObject {
 			this.destroy();
 		}
 	}
-
 }

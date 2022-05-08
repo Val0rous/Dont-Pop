@@ -21,13 +21,13 @@ public class SpawnManager {
 	private static final int LASER_SPAWN_LIMIT = 10;
 	
 	/** The Constant LASER_CICLE_TIME. */
-	private static final double LASER_CICLE_TIME = 15;
+	private static final double LASER_CYCLE_TIME = 15;
 	
 	/** The laser spawn time. */
 	private static double LASER_SPAWN_TIME = 5;
 
 	/** The Constant BULLET_CICLE_TIME. */
-	private static final double BULLET_CICLE_TIME = 4;
+	private static final double BULLET_CYCLE_TIME = 4;
 	
 	/** The bullet spawn time. */
 	private double BULLET_SPAWN_TIME = 2;
@@ -45,7 +45,7 @@ public class SpawnManager {
 	private static double THORNBALL_SPAWN_TIME = 4;
 	
 	/** The Constant THORNBALL_CICLE_TIME. */
-	private static final double THORNBALL_CICLE_TIME = 15;
+	private static final double THORNBALL_CYCLE_TIME = 15;
 	
 	/** The Constant THORNBALL_SPAWN_LIMIT. */
 	private static final int THORNBALL_SPAWN_LIMIT = 5;
@@ -57,7 +57,7 @@ public class SpawnManager {
 	private double EXPLOSION_SPAWN_TIME = 8;
 	
 	/** The Constant EXPLOSION_CICLE_TIME. */
-	private static final double EXPLOSION_CICLE_TIME = 15;
+	private static final double EXPLOSION_CYCLE_TIME = 15;
 	
 	/** The Constant EXPLOSION_DELTA_SPAWN_TIME. */
 	private static final double EXPLOSION_DELTA_SPAWN_TIME = 0.5;
@@ -70,7 +70,7 @@ public class SpawnManager {
 	private final GameEngine gameEngine;
 	
 	/** The power up factory. */
-	private final PoweupFactory powerUpFactory;
+	private final PowerUpFactory powerUpFactory;
 	
 	/** The enemy factory. */
 	private final EnemyFactory enemyFactory;
@@ -81,8 +81,8 @@ public class SpawnManager {
 	/** The bullet timer. */
 	private double bulletTimer = BULLET_SPAWN_TIME;
 	
-	/** The bullet cicle timer. */
-	private double bulletCicleTimer = BULLET_CICLE_TIME;  //tempo per aumentare la difficolta'
+	/** The bullet cycle timer. */
+	private double bulletCycleTimer = BULLET_CYCLE_TIME;  //tempo per aumentare la difficolta'
 
 	/** The laser count. */
 	private int laserCount = 1;
@@ -90,8 +90,8 @@ public class SpawnManager {
 	/** The laser timer. */
 	private double laserTimer = LASER_SPAWN_TIME;
 	
-	/** The laser cicle timer. */
-	private double laserCicleTimer = LASER_CICLE_TIME;  //..
+	/** The laser cycle timer. */
+	private double laserCycleTimer = LASER_CYCLE_TIME;  //..
 
 	/** The thornball count. */
 	private int thornballCount = 1;
@@ -99,14 +99,14 @@ public class SpawnManager {
 	/** The thornball timer. */
 	private double thornballTimer = THORNBALL_SPAWN_TIME;
 	
-	/** The thornball cicle timer. */
-	private double thornballCicleTimer = THORNBALL_CICLE_TIME;
+	/** The thornball cycle timer. */
+	private double thornballCycleTimer = THORNBALL_CYCLE_TIME;
 	
 	/** The explosion timer. */
 	private double explosionTimer = EXPLOSION_SPAWN_TIME;
 	
-	/** The explosion cicle timer. */
-	private double explosionCicleTimer = EXPLOSION_CICLE_TIME;
+	/** The explosion cycle timer. */
+	private double explosionCycleTimer = EXPLOSION_CYCLE_TIME;
 
 	/** The started. */
 	private boolean started;	//false
@@ -118,7 +118,7 @@ public class SpawnManager {
 	 */
 	public SpawnManager(final GameEngine gameEngine) {
 		this.gameEngine = gameEngine;
-		this.powerUpFactory = new PoweupFactory(this.gameEngine);
+		this.powerUpFactory = new PowerUpFactory(this.gameEngine);
 		this.enemyFactory = new EnemyFactory(this.gameEngine);
 
 		//Crea il countdown (game object) iniziale
@@ -150,18 +150,21 @@ public class SpawnManager {
 			this.gameEngine.instantiate(this.powerUpFactory.getPowerUpObj());
 			this.pwrupTimer = POWERUP_SPAWN_TIME;
 		}
+		
 		//Bullet spawn
 		if (this.bulletTimer <= 0) {
 			this.gameEngine.instantiate(this.enemyFactory.getEnemyObj(ObjectType.BULLET));		//(this.enemyFactory.createBullet());
 			this.bulletTimer = BULLET_SPAWN_TIME;
 		}
+		
 		//Bullet difficulty
-		if (this.bulletCicleTimer <= 0) {
+		if (this.bulletCycleTimer <= 0) {
 			if (BULLET_SPAWN_TIME > BULLET_MIN_SPAWN_TIME) {
 				BULLET_SPAWN_TIME -= BULLET_DELTA_SPAWN_TIME;
 			}
-			this.bulletCicleTimer = BULLET_CICLE_TIME;
+			this.bulletCycleTimer = BULLET_CYCLE_TIME;
 		}
+		
 		//Laser spawn
 		if (this.laserTimer <= 0) {
 			for (int i = 0; i < this.laserCount; i++) {
@@ -169,12 +172,13 @@ public class SpawnManager {
 			}
 			this.laserTimer = LASER_SPAWN_TIME;
 		}
+		
 		//Laser difficulty
-		if (this.laserCicleTimer <= 0) {
+		if (this.laserCycleTimer <= 0) {
 			if (this.laserCount < LASER_SPAWN_LIMIT) {
 				this.laserCount++;
 			}
-			this.laserCicleTimer = LASER_CICLE_TIME;
+			this.laserCycleTimer = LASER_CYCLE_TIME;
 		}
 
 		/*Thornball*/
@@ -188,11 +192,11 @@ public class SpawnManager {
 				this.thornballTimer = THORNBALL_SPAWN_TIME;
 			}
 			//Thornball difficulty
-			if (this.thornballCicleTimer <= 0) {
+			if (this.thornballCycleTimer <= 0) {
 				if (this.thornballCount < THORNBALL_SPAWN_LIMIT) {
 					this.thornballCount++;
 				}
-				this.thornballCicleTimer = THORNBALL_CICLE_TIME;
+				this.thornballCycleTimer = THORNBALL_CYCLE_TIME;
 			}
 		}
 
@@ -205,11 +209,11 @@ public class SpawnManager {
 				this.explosionTimer = THORNBALL_SPAWN_TIME;
 			}
 			//Explosion difficulty
-			if (this.explosionCicleTimer <= 0) {
+			if (this.explosionCycleTimer <= 0) {
 				if (EXPLOSION_SPAWN_TIME > EXPLOSION_MIN_SPAWN_TIME) {
 					EXPLOSION_SPAWN_TIME -= EXPLOSION_DELTA_SPAWN_TIME;
 				}
-				this.explosionCicleTimer = EXPLOSION_CICLE_TIME;
+				this.explosionCycleTimer = EXPLOSION_CYCLE_TIME;
 			}
 		}
 	}
@@ -220,9 +224,9 @@ public class SpawnManager {
 	private void updateTime() {
 		this.pwrupTimer -= this.gameEngine.getDeltaTime();
 		this.bulletTimer -= this.gameEngine.getDeltaTime();
-		this.bulletCicleTimer -= this.gameEngine.getDeltaTime();
+		this.bulletCycleTimer -= this.gameEngine.getDeltaTime();
 		this.laserTimer -= this.gameEngine.getDeltaTime();
-		this.laserCicleTimer -= this.gameEngine.getDeltaTime();
+		this.laserCycleTimer -= this.gameEngine.getDeltaTime();
 	}
 	
 	/**
@@ -230,7 +234,7 @@ public class SpawnManager {
 	 */
 	private void updateThornballTime() {
 		this.thornballTimer -= this.gameEngine.getDeltaTime();
-		this.thornballCicleTimer -= this.gameEngine.getDeltaTime();
+		this.thornballCycleTimer -= this.gameEngine.getDeltaTime();
 	}
 	
 	/**
@@ -238,6 +242,6 @@ public class SpawnManager {
 	 */
 	private void updateExplosionTime() {
 		this.explosionTimer -= this.gameEngine.getDeltaTime();
-		this.explosionCicleTimer -= this.gameEngine.getDeltaTime();
+		this.explosionCycleTimer -= this.gameEngine.getDeltaTime();
 	}
 } 

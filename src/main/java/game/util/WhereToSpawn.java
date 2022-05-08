@@ -15,10 +15,10 @@ public class WhereToSpawn { //RITORNA UN POINT 2D IN CUI FAR SPAWNARE IL NOSTRO 
 			final RandomInt randomInt = new RandomInt();
 			final int side = randomInt.getRandomInt(1, 4);
 			return switch (side) {
-			case 1 -> SideOfSpawn.WEST;
-			case 2 -> SideOfSpawn.EAST;
-			case 3 -> SideOfSpawn.SOUTH;
-			default -> SideOfSpawn.NORTH;
+    			case 1 -> SideOfSpawn.WEST;
+    			case 2 -> SideOfSpawn.EAST;
+    			case 3 -> SideOfSpawn.SOUTH;
+    			default -> SideOfSpawn.NORTH;
 			};
 		}
 
@@ -52,11 +52,11 @@ public class WhereToSpawn { //RITORNA UN POINT 2D IN CUI FAR SPAWNARE IL NOSTRO 
 			//SPAWNANO FUORI FDAL GAMEBOARD CON UNA DIFFERENZA DI double n= 0.2 (sia in positivo che in negativo)
 
 			return switch (side) {
-			case WEST -> new Point2D(-0.2, randomNumber);
-			case EAST -> new Point2D(randomNumber, 1.2);
-			case SOUTH -> new Point2D(1.2, randomNumber);
-			case NORTH -> new Point2D(randomNumber, -0.2);
-			default -> new Point2D(0.2, -0.2); //IN CASO DI ERRORE SPAWN IN (0.2,-0.2)
+    			case WEST -> new Point2D(-0.2, randomNumber);
+    			case EAST -> new Point2D(randomNumber, 1.2);
+    			case SOUTH -> new Point2D(1.2, randomNumber);
+    			case NORTH -> new Point2D(randomNumber, -0.2);
+    			default -> new Point2D(0.2, -0.2); //IN CASO DI ERRORE SPAWN IN (0.2,-0.2)
 			};
 		}
 
@@ -66,7 +66,7 @@ public class WhereToSpawn { //RITORNA UN POINT 2D IN CUI FAR SPAWNARE IL NOSTRO 
 		 *
 		 * @return the power UP spawn point
 		 */
-		public Point2D getPowerUPSpawnPoint() {
+		public Point2D getPowerUpSpawnPoint() {
 			return new Point2D(Math.random() * 0.6 + 0.2, Math.random() * 0.6 + 0.2);
 			}
 
@@ -78,8 +78,8 @@ public class WhereToSpawn { //RITORNA UN POINT 2D IN CUI FAR SPAWNARE IL NOSTRO 
 		public SideOfSpawn getThornballRandomSide() {
 			var side = new RandomInt().getRandomInt(0, 1);   //0 west, 1 east
 			return switch (side) {
-			case 1 -> SideOfSpawn.EAST;
-			default -> SideOfSpawn.WEST;
+			    case 1 -> SideOfSpawn.EAST;
+			    default -> SideOfSpawn.WEST;
 			};
 		}
 
@@ -95,9 +95,9 @@ public class WhereToSpawn { //RITORNA UN POINT 2D IN CUI FAR SPAWNARE IL NOSTRO 
 			final double randomNumber = randomInt.getRandomInt(1, 100) / 100;
 			
 			return switch (sideOfSpawn) {
-			case WEST -> new Point2D(-0.2, randomNumber);
-			case EAST -> new Point2D(1.2, randomNumber);
-			default -> new Point2D(0.2, -0.2); //default spawn point
+			    case WEST -> new Point2D(-0.2, randomNumber);
+			    case EAST -> new Point2D(1.2, randomNumber);
+			    default -> new Point2D(0.2, -0.2); //default spawn point
 			};
   }
 	

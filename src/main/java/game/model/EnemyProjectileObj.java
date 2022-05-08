@@ -77,7 +77,10 @@ public class EnemyProjectileObj extends AbstractGameObject {
 	@Override
 	public void update() {
 		this.getPosition().add(this.velocity);
-		if (this.getPosition().getX() >= 1.5 || this.getPosition().getY() >= 1.5 || this.getPosition().getX() <= -0.5 || this.getPosition().getY() <= -0.5) {
+		if (this.getPosition().getX() >= 1.5 
+		        || this.getPosition().getY() >= 1.5 
+		        || this.getPosition().getX() <= -0.5 
+		        || this.getPosition().getY() <= -0.5) {
 			this.destroy();
 		}
 	}
