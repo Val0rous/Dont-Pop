@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor-pane" fx:id="anchorPane" minHeight="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+<AnchorPane id="anchor-pane" fx:id="anchorPane" minHeight="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <!-- YOUR SCORE -->
       <Label id="your-score-label" fx:id="yourScoreLabel" layoutX="119.0" layoutY="5.0" text="Your Score" textAlignment="CENTER" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="5.0">

@@ -20,12 +20,12 @@ public class ImageRenderer implements Renderer {
 	 */
 	public static enum Sprite {
 		//...sprites to add...//
-		PLAYER("/imgs/baloon.png"),
+		PLAYER("/imgs/balloon.png"),
 		BULLET("/imgs/bullet.png"),
 		THORNBALL("/imgs/thornball.png"),
-		GOLDEN_PLAYER("/imgs/golden_baloon.png"),
-		SHIELD_PLAYER("/imgs/shield_baloon.png"),
-		GOLDEN_SHIELD_PLAYER("/imgs/golden_shield_baloon.png"),
+		GOLDEN_PLAYER("/imgs/golden_balloon.png"),
+		SHIELD_PLAYER("/imgs/shield_balloon.png"),
+		GOLDEN_SHIELD_PLAYER("/imgs/golden_shield_balloon.png"),
 		POP_ANIMATION_1("/imgs/pop_1.png"),
 		POP_ANIMATION_2("/imgs/pop_2.png"),
 		POP_ANIMATION_3("/imgs/pop_3.png"),

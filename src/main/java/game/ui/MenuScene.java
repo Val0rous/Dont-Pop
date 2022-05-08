@@ -26,6 +26,7 @@ public class MenuScene {
 		//controller created here
 		final MenuSceneController controller = new MenuSceneController(application);
 		loader.setController(controller);
+		
 		//load GUI from FXML
 		final AnchorPane root = loader.load();
 		

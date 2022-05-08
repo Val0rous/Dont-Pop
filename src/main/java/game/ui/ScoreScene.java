@@ -29,9 +29,6 @@ public class ScoreScene {
 		final ScoreSceneController controller = new ScoreSceneController(scoreManager, application);
 		loader.setController(controller);
 		
-		//controller created in fxml
-//		BuilderController controller = loader.getController();
-		
 		//load GUI from FXML
 		final AnchorPane root = loader.load();
 

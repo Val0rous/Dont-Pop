@@ -4,11 +4,10 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor-pane" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+<AnchorPane id="anchor-pane" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <!-- BULLET -->
       <ImageView id="image4" fitHeight="76.0" fitWidth="96.0" layoutX="38.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
