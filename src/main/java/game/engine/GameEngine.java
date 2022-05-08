@@ -199,7 +199,7 @@ public class GameEngine implements Runnable {
      */
     public void applyPwrUp(final AbstractGameObject pwrup) {
         switch (pwrup.getType()) {
-            case PWRUP_SHIELD:
+            case PWRUP_SHIELD -> {
                 this.hasShield = true;
                 if (this.hasMultiplier) {
                 	this.player.setGoldenShieldBaloonImage();
@@ -207,19 +207,18 @@ public class GameEngine implements Runnable {
                 	this.player.setShieldImage();
                 }
                 this.audioManager.playSound(Sound.SHIELD_GET, 0.4);
-                break;
-            case PWRUP_MULTIPLIER:
+            }
+            case PWRUP_MULTIPLIER -> {
                 this.hasMultiplier = true;
                 //sets multiplier value (duration: 5 seconds)
                 this.scoreCalc.setMultiplier();
             	this.audioManager.playSound(Sound.MULTIPLIER_GET, 0.4);
-                break;
-            case PWRUP_SWEEPER: 
+            }
+            case PWRUP_SWEEPER -> {
                 this.enemies.clear();
             	this.audioManager.playSound(Sound.SWEEPER_GET, 0.5);
-                break;
-            default:
-                //does nothing
+            }
+            default -> { /* does nothing */ }
         }
     }
 
