@@ -5,14 +5,14 @@
 ![GitHub release branch](https://img.shields.io/badge/maven--project-release-brightgreen)
 ![GitHub development branch](https://img.shields.io/badge/dev-development-blue)
 ![GitHub Java version required](https://img.shields.io/badge/Java-17%2B-f89820)
-![GitHub repo size](https://img.shields.io/github/repo-size/Eritropene/OOP21-Dont-Pop?style=flat)
-![GitHub language count](https://img.shields.io/github/languages/count/Eritropene/OOP21-Dont-Pop?style=flat)
-![GitHub top language](https://img.shields.io/github/languages/top/Eritropene/OOP21-Dont-Pop?style=flat)
-![GitHub last commit](https://img.shields.io/github/last-commit/Eritropene/OOP21-Dont-Pop?color=red&style=flat)
+![GitHub repo size](https://img.shields.io/github/repo-size/Fv2601/Dont-Pop?style=flat)
+![GitHub language count](https://img.shields.io/github/languages/count/Fv2601/Dont-Pop?style=flat)
+![GitHub top language](https://img.shields.io/github/languages/top/Fv2601/Dont-Pop?style=flat)
+![GitHub last commit](https://img.shields.io/github/last-commit/Fv2601/Dont-Pop?color=red&style=flat)
 
-![GitHub stars](https://img.shields.io/github/stars/Eritropene/OOP21-Dont-Pop?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Eritropene/OOP21-Dont-Pop?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/Eritropene/OOP21-Dont-Pop?style=social)  
+![GitHub stars](https://img.shields.io/github/stars/Fv2601/Dont-Pop?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Fv2601/Dont-Pop?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/Fv2601/Dont-Pop?style=social)  
 
 
 
