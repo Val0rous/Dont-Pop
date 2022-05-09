@@ -39,7 +39,6 @@ public class GameEngine implements Runnable {
     private static final double SCORE_POS_Y = 0.03;
 
     private boolean hasShield;		//false
-    @SuppressWarnings("unused")
 	private boolean hasMultiplier;	//false
 
     private boolean executeLoop = true;
