@@ -121,7 +121,7 @@ public class GameEngine implements Runnable {
 
             //calculate frame duration
             final long endFrame = System.currentTimeMillis();
-            this.deltaTime = (double) this.deltatime(startTime, endFrame) / 1000;
+            this.deltaTime = (double) this.deltaTime(startTime, endFrame) / 1000;
         }
 
         /* After the game loop ends, the scene is changed */
@@ -147,7 +147,7 @@ public class GameEngine implements Runnable {
      * @param endFrame frame time
      * @return time difference between two frames (in ms)
      */
-    public long deltatime(final long startFrame, final long endFrame) {
+    public long deltaTime(final long startFrame, final long endFrame) {
         return endFrame - startFrame;
     }
 
