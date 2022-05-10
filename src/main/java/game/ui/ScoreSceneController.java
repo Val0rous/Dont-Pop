@@ -75,19 +75,19 @@ public class ScoreSceneController {
 
 		//setting tables % width
 		final double tableWidth = DEFAULT_SIZE * 0.85;
-		this.yourScoreTable.setMaxWidth(tableWidth);
-		this.leaderboardTable.setMaxWidth(tableWidth);
+//		this.yourScoreTable.setMaxWidth(tableWidth);
+//		this.leaderboardTable.setMaxWidth(tableWidth);
 
 		//setting columns % width
-		this.yourRankCol.setPrefWidth(tableWidth * 0.191);
-		this.yourNameCol.setPrefWidth(tableWidth * 0.515);
-		this.yourScoreCol.setPrefWidth(tableWidth * 0.230);
-		this.rankCol.setPrefWidth(tableWidth * 0.191);
-		this.nameCol.setPrefWidth(tableWidth * 0.515);
-		this.scoreCol.setPrefWidth(tableWidth * 0.230);
+//		this.yourRankCol.setPrefWidth(tableWidth * 0.191);
+//		this.yourNameCol.setPrefWidth(tableWidth * 0.515);
+//		this.yourScoreCol.setPrefWidth(tableWidth * 0.230);
+//		this.rankCol.setPrefWidth(tableWidth * 0.191);
+//		this.nameCol.setPrefWidth(tableWidth * 0.515);
+//		this.scoreCol.setPrefWidth(tableWidth * 0.230);
 		//setting columns % height
-//		this.yourScoreTable.setFixedCellSize(this.screenSize * 0.03);
-//		this.leaderboardTable.setFixedCellSize(this.screenSize * 0.03);
+////	this.yourScoreTable.setFixedCellSize(this.screenSize * 0.03);
+////	this.leaderboardTable.setFixedCellSize(this.screenSize * 0.03);
 
 		//doesn't show your current score if player views leaderboard from main menu
 		if (this.scoreManager.isReadOnly()) {
