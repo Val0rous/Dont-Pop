@@ -23,7 +23,7 @@ public class ScoreSceneController {
 	private final ObservableList<Pair<String, Integer>> ranking;
 	private final ObservableList<RankItem> leaderboardData;
 	private final ObservableList<RankItem> yourScoreData;
-	private final static int DEFAULT_SIZE = 300;
+//	private final static int DEFAULT_SIZE = 300;
 	
 	//These fields are automatically injected by the FXML loader.
 	@FXML private AnchorPane anchorPane;
@@ -74,7 +74,7 @@ public class ScoreSceneController {
 		this.leaderboardTable.setItems(this.leaderboardData);
 
 		//setting tables % width
-		final double tableWidth = DEFAULT_SIZE * 0.85;
+//		final double tableWidth = DEFAULT_SIZE * 0.85;
 //		this.yourScoreTable.setMaxWidth(tableWidth);
 //		this.leaderboardTable.setMaxWidth(tableWidth);
 
