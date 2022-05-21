@@ -22,7 +22,7 @@ public class StartTimerObj extends AbstractGameObject {
 	public StartTimerObj(final Point2D position, final double size, final ObjectType type, final GameEngine gameEngine) {
 		super(position, type, gameEngine);
 		this.setRenderer((Renderer)new TextRenderer(this, "3", size, Color.web("#E60707")));
-		timer = 3;
+		this.timer = 3;
 	}
 
 	/**
@@ -31,14 +31,14 @@ public class StartTimerObj extends AbstractGameObject {
 	 */
 	@Override
 	public void update() {
-		timer -= this.getGameEngine().getDeltaTime();
-		if (timer >= 2) {
+		this.timer -= this.getGameEngine().getDeltaTime();
+		if (this.timer >= 2) {
 			((TextRenderer)this.getRenderer()).setText("3");
-		} else if (timer >= 1) {
+		} else if (this.timer >= 1) {
 			((TextRenderer)this.getRenderer()).setText("2");
-		} else if (timer >= 0) {
+		} else if (this.timer >= 0) {
 			((TextRenderer)this.getRenderer()).setText("1");
-		} else if (timer >= -1) {
+		} else if (this.timer >= -1) {
 			((TextRenderer)this.getRenderer()).setText("GO!");
 		} else {
 			this.destroy();
