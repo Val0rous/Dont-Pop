@@ -20,7 +20,7 @@ repositories {
 
 val javaFXModules = listOf("base", "controls", "fxml", "swing", "graphics")
 val supportedPlatforms = listOf("linux", "mac", "win") //all required for OOP
-val javaFXVersion = 15
+val javaFXVersion = 18
 
 dependencies {
     for (platform in supportedPlatforms) {
