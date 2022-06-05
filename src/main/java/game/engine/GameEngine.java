@@ -90,7 +90,7 @@ public class GameEngine implements Runnable {
      */
     public void startGameLoop() throws Exception {
     	//start music
-    	this.audioManager.playMusic(AudioManager.Music.BALOON_GROOVE, 0.6);
+    	this.audioManager.playMusic(AudioManager.Music.BALLOON_GROOVE, 0.6);
     	//start loop
         while (executeLoop) {
             //interval between "frames"

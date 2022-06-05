@@ -20,7 +20,7 @@ public class AudioManager {
 	 * It's used for long audio files.
 	 */
 	public static enum Music {
-		BALOON_GROOVE("audio/BalloonGroove.wav");
+		BALLOON_GROOVE("audio/BalloonGroove.wav");
 
 		private Music(final String path) {
 			final Media media = new Media(getResPath(path));
